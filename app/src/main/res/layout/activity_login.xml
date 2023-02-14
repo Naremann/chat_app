@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.chatapplication.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginActivity"
+        android:background="@drawable/background"
+        >
+        <com.google.android.material.internal.BaselineLayout
+            android:id="@+id/baseline_of_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintGuide_begin="70dp"
+            android:orientation="horizontal"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/baseline_of_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Login"
+            style="@style/TextViewTitle"
+            />
+
+        <com.google.android.material.internal.BaselineLayout
+            android:id="@+id/baseline_fields"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintGuide_begin="250dp"
+            android:orientation="horizontal"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/baseline_fields"
+            style="@style/TextInputLayoutStyle"
+            app:error="@{vm.emailError}"
+
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter email"
+                android:text="@={vm.email}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/input_layout_email"
+            style="@style/TextInputLayoutStyle"
+            layout_error = "@{vm.passwordError}"
+
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter password"
+                android:text="@={vm.password}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/create_account_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_layout_pass"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Login"
+            android:layout_marginTop="30dp"
+            android:onClick="@{()->vm.login()}"
+            android:layout_marginHorizontal="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/create_account_btn"
+            app:layout_constraintStart_toStartOf="@id/create_account_btn"
+            android:text="Or create an account"
+            android:textSize="20sp"
+            android:onClick="@{()->vm.navigateToRegisterActivity()}"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
