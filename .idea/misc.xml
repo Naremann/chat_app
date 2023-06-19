@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/drawable/back_ground.xml" value="0.1495" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/drawable/layout_edit_text_message.xml" value="0.1255" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/drawable/recieve_message_et.xml" value="0.1145" />
         <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/drawable/rounded_btn.xml" value="0.16" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/drawable/sended_message_et.xml" value="0.1145" />
         <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/activity_add_room.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/activity_add_room2.xml" value="0.17447916666666666" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/activity_chat.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/activity_chat.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/activity_login.xml" value="0.19382022471910113" />
         <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
@@ -17,6 +21,10 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/fragment_first.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/item_category_spinner.xml" value="0.18" />
         <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/item_room.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/recieved_message_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/reciever_message_item.xml" value="0.203125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/sended_message_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/chatApplication3/app/src/main/res/layout/sender_message_item.xml" value="0.1506849315068493" />
       </map>
     </option>
   </component>

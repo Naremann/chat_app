@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.example.chatapplication.Constants
 import com.example.chatapplication.R
 import com.example.chatapplication.base.BaseActivity
 import com.example.chatapplication.database.getRoom
@@ -39,6 +40,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(),Navigato
 
     private fun startChatActivity(room: Room) {
         val intent=Intent(this,ChatActivity::class.java)
+        intent.putExtra(Constants.EXTRA_ROOM,room)
         startActivity(intent)
     }
 
