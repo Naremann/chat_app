@@ -9,9 +9,9 @@ data class CategoryItem(
 ){
 
    companion object{
-       const val MUSIC = "music"
+       private const val MUSIC = "music"
        const val SPORT = "sport"
-       const val MOVIE = "music"
+       private const val MOVIE = "movie"
        fun getCategoryById(categoryId:String):CategoryItem{
            return when(categoryId){
                MUSIC-> CategoryItem(MUSIC,"Music", R.drawable.music)

@@ -12,4 +12,16 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_add_room">AddRoomActivity</string>
+    <string name="create_room">Create New Room</string>
+    <string name="enter_room_name">Enter Room Name</string>
+    <string name="enter_room_description">Enter Room Description</string>
+    <string name="create">Create</string>
+    <string name="login">Login</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="sign_up"><u>Sign Up</u></string>
+    <string name="create_account">Create account</string>
+    <string name="enter_first_name">Enter first name</string>
+    <string name="enter_last_name">Enter last name</string>
+    <string name="don_t_have_account">Don\'t have account?</string>
 </resources>

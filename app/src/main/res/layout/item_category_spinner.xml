@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             tools:text="Music"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorOnSecondary"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/item_img"
             app:layout_constraintStart_toEndOf="@id/item_img"

@@ -9,10 +9,13 @@
             type="com.example.chatapplication.ui.addRoom.AddRoomViewModel" />
 
     </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".ui.addRoom.AddRoomActivity"
         android:background="@drawable/background"
         >
@@ -45,7 +48,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="Create New Room"
+                    android:text="@string/create_room"
                     android:textStyle="bold"
                     android:textSize="25sp"
                     />
@@ -72,7 +75,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="Enter Room Name"
+                        android:hint="@string/enter_room_name"
                         android:text="@={vm.roomName}"
                         />
 
@@ -96,7 +99,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="Enter Room Description"
+                        android:hint="@string/enter_room_description"
                         android:text="@={vm.roomDesc}"
                         />
 
@@ -109,7 +112,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginTop="50dp"
                     android:background="@drawable/rounded_btn"
-                    android:text="Create"
+                    android:text="@string/create"
                     android:onClick="@{()->vm.createRoom()}"
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -117,4 +120,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
