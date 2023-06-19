@@ -1,7 +1,6 @@
 package com.example.chatapplication.ui.home
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -13,12 +12,11 @@ import com.example.chatapplication.databinding.ActivityHomeBinding
 import com.example.chatapplication.model.Room
 import com.example.chatapplication.ui.addRoom.AddRoomActivity
 import com.example.chatapplication.ui.chat.ChatActivity
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
 
-class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(),Navigator {
-    lateinit var roomAdapter : RoomItemAdapter
-    lateinit var recyclerView: RecyclerView
+
+class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(), Navigator {
+    private lateinit var roomAdapter: RoomItemAdapter
+    private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewDataBinding.vm = viewModel
@@ -30,8 +28,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(),Navigato
     private fun initRecyclerView() {
         roomAdapter = RoomItemAdapter(null)
         recyclerView = viewDataBinding.recyclerView
-        recyclerView.adapter=roomAdapter
-        roomAdapter.onItemClickListener = object :RoomItemAdapter.OnItemClickListener{
+        recyclerView.adapter = roomAdapter
+        roomAdapter.onItemClickListener = object : RoomItemAdapter.OnItemClickListener {
             override fun onItemClick(room: Room) {
                 startChatActivity(room)
             }
@@ -39,20 +37,24 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(),Navigato
     }
 
     private fun startChatActivity(room: Room) {
-        val intent=Intent(this,ChatActivity::class.java)
-        intent.putExtra(Constants.EXTRA_ROOM,room)
+        val intent = Intent(this, ChatActivity::class.java)
+        intent.putExtra(Constants.EXTRA_ROOM, room)
         startActivity(intent)
     }
 
     override fun onStart() {
         super.onStart()
-        getRoom({ querySnapshot->
-           val  roomList = querySnapshot.toObjects(Room::class.java)
+        getRoom({ querySnapshot ->
+            val roomList = querySnapshot.toObjects(Room::class.java)
             roomAdapter.changeData(roomList)
 
         }, {
 
         })
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 
     override fun initViewModeL(): HomeViewModel {
@@ -64,7 +66,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(),Navigato
     }
 
     override fun navigateToAddRoom() {
-        val intent = Intent(this,AddRoomActivity::class.java)
+        val intent = Intent(this, AddRoomActivity::class.java)
         startActivity(intent)
     }
 }

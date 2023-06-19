@@ -52,7 +52,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:gravity="center"
-            android:text="Create account"
+            android:text="@string/create_account"
             style="@style/TextViewTitle" />
 
         <com.google.android.material.internal.BaselineLayout
@@ -75,7 +75,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter first name"
+                android:hint="@string/enter_first_name"
                 android:text="@={vm.firstName}"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -93,7 +93,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter last name"
+                android:hint="@string/enter_last_name"
                 android:text="@={vm.lastName}"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -111,7 +111,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter email"
+                android:hint="@string/enter_email"
                 android:text="@={vm.email}"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -129,7 +129,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter password"
+                android:hint="@string/enter_password"
                 android:text="@={vm.password}"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -141,7 +141,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/input_layout_pass"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Create account"
+            android:text="@string/create_account"
             android:layout_marginTop="30dp"
             android:onClick="@{()->vm.createAccount()}"
             />

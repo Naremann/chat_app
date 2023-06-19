@@ -9,6 +9,7 @@ import com.example.chatapplication.base.BaseActivity
 import com.example.chatapplication.databinding.ActivityLoginBinding
 import com.example.chatapplication.ui.home.HomeActivity
 import com.example.chatapplication.ui.register.RegisterActivity
+import kotlin.system.exitProcess
 
 class LoginActivity :BaseActivity<ActivityLoginBinding,LoginViewModel>() ,Navigator{
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,13 +1,11 @@
 package com.example.chatapplication.ui.addRoom
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.example.chatapplication.R
 import com.example.chatapplication.model.CategoryItem
 
@@ -26,7 +24,7 @@ class CategoriesSpinnerAdapter(private val categoryItems : List<CategoryItem>) :
 
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View {
         var myView = view
-        var viewHolder : ViewHolder
+        val viewHolder : ViewHolder
         if(myView==null){
             myView = LayoutInflater.from(parent!!.context).inflate(R.layout.item_category_spinner,parent,false)
             viewHolder = ViewHolder(myView)
