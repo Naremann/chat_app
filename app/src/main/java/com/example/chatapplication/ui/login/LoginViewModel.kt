@@ -3,8 +3,10 @@ package com.example.chatapplication.ui.login
 import android.util.Log
 import androidx.databinding.ObservableField
 import com.example.chatapplication.Constants
+import com.example.chatapplication.DataUtils
 import com.example.chatapplication.base.BaseViewModel
 import com.example.chatapplication.database.getUserFromFireStore
+import com.example.chatapplication.model.AppUser
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -33,9 +35,12 @@ class LoginViewModel : BaseViewModel<Navigator>() {
 
     private fun checkUser(uid: String) {
 
-        getUserFromFireStore(uid, onSuccessListener = {
+        getUserFromFireStore(uid, onSuccessListener = { docSnapshot ->
             showLoading.value = false
-            //val user = docSnapshot.toObject(AppUser::class.java)!!
+            val user = docSnapshot.toObject(AppUser::class.java)
+            DataUtils.USER = user
+            Log.e("login", "user $user")
+            Log.e("login", "USER ${DataUtils.USER}")
             hasLogin()
             navigator.navigateToHomeActivity()
 

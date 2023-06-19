@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="message"
+            type="com.example.chatapplication.model.Message" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="10dp">
+
+        <EditText
+            android:id="@+id/received_message_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="5dp"
+            android:text="@{message.messageContent}"
+            android:textColor="@color/white"
+            android:background="@drawable/receive_message_et"
+            android:padding="10dp"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/message_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/received_message_et"
+            app:layout_constraintEnd_toStartOf="@id/received_message_et"
+            android:text="@{message.time}"
+            style="@style/MessageTimeStyle"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -8,6 +8,6 @@ data class AppUser (
     )
 {
     companion object{
-        val COLLECTION_NAME ="user"
+        const val COLLECTION_NAME ="user"
     }
 }

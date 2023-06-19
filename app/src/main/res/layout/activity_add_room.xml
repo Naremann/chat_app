@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.chatapplication.ui.addRoom.AddRoomViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.addRoom.AddRoomActivity"
+        android:background="@drawable/background"
+        >
+        <com.google.android.material.internal.BaselineLayout
+            android:id="@+id/baseline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="100dp"
+            />
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/baseline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="30dp"
+            android:layout_marginHorizontal="30dp"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp"
+
+                >
+                <TextView
+                    android:id="@+id/create_room_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="Create New Room"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    />
+                <ImageView
+                    android:id="@+id/group_img"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/create_room_tv"
+                    app:layout_constraintStart_toStartOf="@id/create_room_tv"
+                    app:layout_constraintEnd_toEndOf="@id/create_room_tv"
+                    android:src="@drawable/group"
+                    android:layout_marginTop="20dp"
+
+                    />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_room_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/group_img"
+                    android:layout_marginTop="20dp"
+                    app:boxBackgroundColor="@color/transparent"
+                    layout_error="@{vm.roomNameError}"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Enter Room Name"
+                        android:text="@={vm.roomName}"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:id="@+id/category_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/layout_room_name"
+                    android:layout_marginTop="20dp"
+                    />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_room_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/category_spinner"
+                    android:layout_marginTop="20dp"
+                    app:boxBackgroundColor="@color/transparent"
+                    layout_error="@{vm.roomDescError}"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Enter Room Description"
+                        android:text="@={vm.roomDesc}"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/layout_room_desc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/rounded_btn"
+                    android:text="Create"
+                    android:onClick="@{()->vm.createRoom()}"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
